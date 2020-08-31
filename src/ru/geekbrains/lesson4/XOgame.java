@@ -143,24 +143,6 @@ public class XOgame {
             }
         } return false;
 
-//        for (int i = 0; i < SIZE; i++) {
-//            for (int j = 0; j < SIZE; j++) {
-//                if (map[0][j] == c && map[1][j] == c && map[2][j] == c) {
-//                    return true;
-//                }
-//                if (map[i][0] == c && map[i][1] == c && map[i][2] == c) {
-//                    return true;
-//                }
-//                if (map[0][2] == c && map[1][1] == c && map[2][0] == c) {
-//                    return true;
-//                }
-//                if (map[0][0] == c && map[1][1] == c && map[2][2] == c) {
-//                    return true;
-//                }
-//            }
-//        } return false;
-
-
 
     }
 
