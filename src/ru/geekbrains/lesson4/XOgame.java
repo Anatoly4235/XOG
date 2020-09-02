@@ -32,7 +32,8 @@ public class XOgame {
                 break;
             }
 
-            aiTurn();
+            lastAiTurn();
+//            aiTurn();
             printMap();
             if (checkWin('O')) {
                 System.out.println("Компьютер победил.");
@@ -100,13 +101,61 @@ public class XOgame {
         }
     }
 
-    public static void aiTurn() {
-        int x;
-        int y;
+//    public static void aiTurn() {
+//        int x;
+//        int y;
+//        do {
+//            x = random.nextInt(3);
+//            y = random.nextInt(3);
+//        } while (!isCellValid(y, x));
+//
+//        map[y][x] = 'O';
+//    }
+
+    public static void lastAiTurn() {
+        int x = 0;
+        int y = 0;
+        int count = 0;
+
         do {
-            x = random.nextInt(3);
-            y = random.nextInt(3);
-        } while (!isCellValid(y, x));
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    if (map[1][j] == 'X' || map[0][j] == 'X' || map[2][j] == 'X') {
+                        count++;
+                        if(count == 2){
+                            x = j;
+                            y = random.nextInt(3);
+                            continue;
+                        }
+
+                    }
+//                    if (map[i][j] == 'X' && (map[i][1] == 'X' || map[i][2] == 'X')) {
+//                        x = j;
+//                        if(map[i][j] == '.')
+//                            y = i;
+//                        continue;
+//                    }
+//                    if (map[1][1] == 'X' && (map[0][0] == 'X' || map[2][2] == 'X')) {
+//                        x = j;
+//                        if(map[i][j] == '.')
+//                            y = i;
+//                        continue;
+//                    }
+//                    if (map[1][1] == 'X' && (map[0][2] == 'X' || map[2][0] == 'X')) {
+//                        x = j;
+//                        if(map[i][j] == '.')
+//                            y = i;
+//                        continue;
+//                    }
+                    else {
+                        x = random.nextInt(3);
+                        y = random.nextInt(3);
+                    }
+
+
+                }
+            }
+       } while (!isCellValid(y, x));
 
         map[y][x] = 'O';
     }
@@ -141,7 +190,8 @@ public class XOgame {
                     return true;
                 }
             }
-        } return false;
+        }
+        return false;
 
 
     }
